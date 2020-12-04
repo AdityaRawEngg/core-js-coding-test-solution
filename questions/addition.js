@@ -6,6 +6,18 @@
 
 const addition = (...numbers) => {
   // all your code
+  if (numbers.length != 0) {
+    let sum = 0;
+    numbers.forEach((number) => {
+      if (isNaN(parseInt(number))) {
+        throw new Error("Invalid Input");
+      }
+      sum = sum + number;
+    });
+    return sum;
+  } else {
+    throw new Error("Invalid Input");
+  }
 };
 
 module.exports = addition;
